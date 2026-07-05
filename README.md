@@ -1,3 +1,3 @@
 # Netflix
-web development<br>
+Web development<br>
 Author - Nandoliya Mohsin Ali
