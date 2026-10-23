@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -6,23 +7,25 @@
 
 body {
     background-color: black;
+    overflow-x: hidden;
 }
 
 .main {
     background-image: url("image/bg.jpg");
     background-position: center center;
-    background-size: max(1200px, 100vw);
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 644px;
+    min-height: 644px;
     position: relative;
 }
 
 .main .box {
-    height: 644px;
-    width: 100vw;
+    min-height: 644px;
+    width: 100%;
     opacity: 0.69;
     position: absolute;
     top: 0;
+    left: 0;
     background-color: black;
 }
 
@@ -33,12 +36,13 @@ nav {
     display: flex;
     align-items: center;
     height: 100px;
+    gap: 15px;
 }
-
 
 nav img {
     color: red;
     width: 130px;
+    max-width: 35%;
     position: relative;
     z-index: 11;
 }
@@ -49,22 +53,20 @@ nav button {
 }
 
 .btn1 {
-    padding: 2px 24px;
+    padding: 6px 18px;
     font-weight: 500;
     color: white;
-    font-size: 20px;
-    /* background-color: rgba(248, 243, 243, 0.021); */
+    font-size: 16px;
     border-radius: 4px;
     border: 1px solid white;
     background: transparent;
-    /* cursor: pointer; */
 }
 
 .btn2 {
     background-color: red;
     color: white;
-    padding: 3px 24px;
-    font-size: 20px;
+    padding: 7px 18px;
+    font-size: 16px;
     border-radius: 4px;
     font-weight: 500;
     border: none;
@@ -72,82 +74,81 @@ nav button {
 
 .hero {
     font-family: 'Martel Sans', sans-serif;
-    /* height: calc(100% - 100px); */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* color: white; */
     position: relative;
     gap: 23px;
-    margin-top: 200px;
-    padding: 0 30px;
+    margin-top: 150px;
+    padding: 0 30px 50px;
+    text-align: center;
 }
 
 .comment1 {
     color: white;
-    font-size: 45px;
+    font-size: clamp(28px, 4vw, 45px);
     font-weight: bolder;
-    align-items: center;
+    text-align: center;
 }
 
 .comment2 {
     color: white;
-    font-size: 25px;
+    font-size: clamp(18px, 2.5vw, 25px);
     font-weight: 400;
-    align-items: center;
+    text-align: center;
 }
 
 .comment3 {
     color: white;
-    font-size: 20px;
+    font-size: clamp(15px, 2vw, 20px);
     font-weight: 300;
-    align-items: center;
+    text-align: center;
 }
 
 .hero button {
-    /* display: flex; */
     align-items: center;
     justify-content: center;
     gap: 16px;
 }
 
 .hero input {
-    padding: 17px 101px 17px 14px;
+    width: min(350px, 100%);
+    box-sizing: border-box;
+    padding: 17px 14px;
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 4px;
-    /* background-color: rgba(23, 23, 23, 0.7); */
     background: transparent;
     border: 1px solid white;
 }
 
 .hero .btn3 {
-    height: 50px;
+    min-height: 50px;
     width: 190px;
+    max-width: 100%;
     color: white;
     background-color: red;
     border: none;
     border-radius: 4px;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 400;
 }
 
 .hr {
     height: 7px;
     background-color: rgb(46, 44, 44);
-    /* position: relative; */
-    /* z-index: 20; */
 }
 
 .first {
     display: flex;
-    max-width: 70vw;
+    max-width: 1100px;
+    width: 85%;
     justify-content: center;
     align-items: center;
     color: white;
     margin: auto;
-    /* flex-wrap: wrap; */
+    gap: 25px;
 }
 
 .first div {
@@ -155,38 +156,41 @@ nav button {
     flex-direction: column;
     padding: 30px 0;
     gap: 20px;
+    min-width: 0;
 }
 
 .first div :nth-child(1) {
-    font-size: 35px;
+    font-size: clamp(25px, 3.2vw, 35px);
 }
 
 .first span {
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
 }
 
 .img {
-    /* max-width: 30vw; */
     position: relative;
     z-index: 10;
+    flex: 1;
+    min-width: 0;
 }
 
 .img img {
-    width: 40vw;
+    width: 100%;
+    height: auto;
+    display: block;
     position: relative;
     z-index: 10;
 }
 
 .first .img video {
     position: absolute;
-    top: 120px;
-    right: 62px;
-    /* left: 0; */
-    width: 470px;
+    top: 19%;
+    left: 13%;
+    width: 73%;
+    height: auto;
 }
 
 .faq {
-    /* display: flex; */
     background-color: black;
     color: white;
     padding: 34px;
@@ -195,7 +199,7 @@ nav button {
 .faq h2 {
     align-items: center;
     text-align: center;
-    font-size: 38px;
+    font-size: clamp(26px, 3.5vw, 38px);
     margin-bottom: 20px;
 }
 
@@ -205,18 +209,24 @@ nav button {
 
 .faqbox {
     display: flex;
-    width: 700px;
+    width: min(700px, 100%);
+    box-sizing: border-box;
     margin: 10px auto;
     padding: 20px;
     justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     background-color: gray;
     color: white;
-    font-size: 20px;
+    font-size: clamp(15px, 2vw, 20px);
 }
 
 .faqbox svg {
     filter: invert(1);
+    flex-shrink: 0;
 }
+
+/* FOOTER CSS — ORIGINAL, UNCHANGED */
 
 footer {
     color: white;
@@ -249,6 +259,8 @@ a {
     font-size: 14px;
 }
 
+/* ORIGINAL RESPONSIVE BREAKPOINT — FOOTER RULE PRESERVED */
+
 @media screen and (max-width: 1300px) {
     nav {
         max-width: 90vw;
@@ -268,6 +280,8 @@ a {
 
     .first .img video {
         width: 69vw;
+        top: 70px;
+        left: 10px;
     }
 
     .footer {
@@ -276,7 +290,147 @@ a {
     }
 
     .faqbox {
-        width: 320px;
+        width: 75vw;
+    }
+}
+
+/* TABLET */
+@media screen and (max-width: 900px) {
+    nav {
+        max-width: 90%;
     }
 
+    .hero {
+        margin-top: 70px;
+    }
+
+    .first {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+    }
+
+    .first div {
+        align-items: center;
+    }
+
+    .img {
+        width: 100%;
+        flex: auto;
+    }
+
+    .img img {
+        width: 100%;
+    }
+
+    .first .img video {
+        width: 73%;
+        top: 19%;
+        left: 13%;
+    }
+
+    .faq {
+        padding: 30px 5%;
+    }
+
+    .faqbox {
+        width: 100%;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 600px) {
+    .main {
+        min-height: 580px;
+        background-size: cover;
+    }
+
+    .main .box {
+        min-height: 580px;
+    }
+
+    nav {
+        width: 90%;
+        max-width: none;
+        height: 80px;
+        gap: 10px;
+    }
+
+    nav img {
+        width: 95px;
+    }
+
+    .btn1,
+    .btn2 {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .hero {
+        margin-top: 75px;
+        padding: 0 18px 40px;
+        gap: 18px;
+    }
+
+    .hero input {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .hero .btn3 {
+        width: auto;
+        padding: 8px 16px;
+        font-size: 18px;
+    }
+
+    .first {
+        width: 90%;
+    }
+
+    .first div {
+        padding: 25px 0;
+        gap: 14px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .first .img video {
+        width: 73%;
+        top: 19%;
+        left: 13%;
+    }
+
+    .faq {
+        padding: 25px 5%;
+    }
+
+    .faqbox {
+        padding: 15px;
+    }
+}
+
+/* SMALL MOBILE */
+@media screen and (max-width: 380px) {
+    nav img {
+        width: 75px;
+    }
+
+    .btn1,
+    .btn2 {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .hero {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .faqbox {
+        padding: 12px;
+        font-size: 14px;
+    }
 }
